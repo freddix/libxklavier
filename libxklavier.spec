@@ -1,7 +1,7 @@
 Summary:	libXklavier library
 Name:		libxklavier
 Version:	5.3
-Release:	1
+Release:	2
 License:	GPLv2 / LGPL v2
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/libxklavier/5.3/%{name}-%{version}.tar.xz
@@ -17,7 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkg-config
 BuildRequires:	xorg-libxkbfile-devel
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This library allows you simplify XKB-related development.
@@ -76,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 %{_includedir}/*
 %{_datadir}/gir-1.0/Xkl-1.0.gir
